@@ -1,0 +1,16 @@
+{
+	"name": "ressource",
+	"version": "0.0.1",
+	"description": "Open connection to any kind of ressource based on their URL",
+	"dependencies": {
+		"@dmail/http": "*",
+		"@dmail/url": "*"
+	},
+	"scripts": {
+		
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dmail/ressource"
+	}
+}
