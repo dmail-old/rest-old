@@ -21,26 +21,30 @@ xhr.send(JSON.stringify({
 // http://stackoverflow.com/questions/26203603/how-do-i-get-the-sha-parameter-from-github-api-without-downloading-the-whole-f
 // en mode install il suffit de faire un create file avec PUT
 // en mode update il faut update le fichier avec un PUT mais c'est plus complexe
-function completeGithubSetRequestOptions(options){
+function completeGithubSetRequestOptions(request){
 	var giturl = replace('https://api.github.com/repos/{user}/{repo}/contents/{path}', {
 
 	});
 
-	Object.complete(options, {
-		headers: {
-			'content-type': 'application/json',
-			'user-agent': 'jsenv'
-		},
-		body: JSON.stringify({
-			message: 'update ' + giturl.pathname,
-			content: Base64.encode(options.body)
-		})
+	request.method = 'PUT';
+	request.url = giturl;
+	request.body = JSON.stringify({
+		message: 'update ' + giturl.pathname,
+		content: Base64.encode(request.body)
 	});
 
-	options.method = 'PUT';
-	options.url = giturl;
+	var headers = {
+		'content-type': 'application/json',
+		'user-agent': 'jsenv'
+	};
 
-	return options;
+	for(var headerName in headers){
+		if( false === request.headers.has(headerName) ){
+			request.headers.set(headerName, headers[headerName]);
+		}
+	}
+
+	return request;
 }
 
 export default completeGithubSetRequestOptions;

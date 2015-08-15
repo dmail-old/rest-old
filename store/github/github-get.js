@@ -14,8 +14,8 @@ xhr.setRequestHeader('accept', 'application/vnd.github.v3.raw');
 //xhr.setRequestHeader('if-modified-since', date.toUTCString());
 xhr.send(null);
 */
-function completeGithubGetRequestOptions(options){
-	var url = options.url;
+function completeGithubGetRequestOptions(request){
+	var url = request.url;
 	var pathname = url.pathname;
 	var parts = pathname.slice(1).split('/');
 	var user = parts[0];
@@ -39,11 +39,14 @@ function completeGithubGetRequestOptions(options){
 		headers['authorization'] = 'token ' + platform.config['github-' + data.user + '-token'];
 	}
 
-	Object.complete(options, {headers: headers});
+	request.url = giturl;
+	for(var headerName in headers){
+		if( false === request.headers.has(headerName) ){
+			request.headers.set(headerName, headers[headerName]);
+		}
+	}
 
-	options.url = giturl;
-
-	return options;
+	return request;
 }
 
 export default completeGithubGetRequestOptions;

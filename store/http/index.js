@@ -4,8 +4,8 @@ var httpStore = {
 	},
 
 	methods: {
-		'*': function(options){
-			return options;
+		'*': function(request){
+			return request;
 		}
 	}
 };
