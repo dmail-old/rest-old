@@ -11,7 +11,7 @@ var fileStore = {
 			return getFile(options);
 		},
 
-		post(options){
+		set(options){
 			return setFile(options);
 		}
 	}
