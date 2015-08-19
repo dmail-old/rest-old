@@ -3,11 +3,11 @@
 	"version": "0.0.1",
 	"description": "Open connection to any kind of ressource based on their URL",
 	"dependencies": {
-		"@dmail/http": "*",
-		"@dmail/url": "*"
+		"@dmail/http": "git+https://github.com/dmail/http",
+		"@dmail/url": "git+https://github.com/dmail/url"
 	},
 	"scripts": {
-		
+
 	},
 	"repository": {
 		"type": "git",
