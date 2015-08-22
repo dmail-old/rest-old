@@ -3,11 +3,12 @@
 	"version": "0.0.1",
 	"description": "Open connection to any kind of ressource based on their URL",
 	"dependencies": {
+		"system-postinstall": "git+https://github.com/dmail/system-postinstall",
 		"@dmail/http": "git+https://github.com/dmail/http",
 		"@dmail/url": "git+https://github.com/dmail/url"
 	},
 	"scripts": {
-
+		"postinstall": "system-postinstall"
 	},
 	"repository": {
 		"type": "git",
