@@ -6,7 +6,7 @@ for(var storeName in stores){
 }
 
 var supportedRessources = ressource.stores.map(function(store){
-	return store.name + '=' + Object.keys(store.properties.methods).join();
+	return store.name + '=' + Object.keys(store.properties.methods).join(' ');
 });
 
 console.log('supported ressources', supportedRessources.join(','));
