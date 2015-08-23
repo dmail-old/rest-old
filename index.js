@@ -1,5 +1,5 @@
 import ressource from './lib/ressource.js';
-import stores from './lib/store/store-{platform}.js';
+import stores from './lib/store/store-#{platform-type}.js';
 
 for(var storeName in stores){
 	ressource.define(storeName, stores[storeName]);
