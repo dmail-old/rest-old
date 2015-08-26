@@ -7,8 +7,12 @@
 		"@dmail/http": "git+https://github.com/dmail/http",
 		"@dmail/url": "git+https://github.com/dmail/url"
 	},
+	"devDependencies": {
+		"system-platform": "git+https://github.com/dmail/system-platform"
+	},
 	"scripts": {
-		"postinstall": "system-postinstall"
+		"postinstall": "system-postinstall",
+		"test": "node test"
 	},
 	"repository": {
 		"type": "git",
