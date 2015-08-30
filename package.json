@@ -8,11 +8,11 @@
 		"@dmail/url": "git+https://github.com/dmail/url"
 	},
 	"devDependencies": {
-		"system-platform": "git+https://github.com/dmail/system-platform"
+		"test-module": "git+https://github.com/dmail/test-module"
 	},
 	"scripts": {
 		"postinstall": "system-postinstall",
-		"test": "node test"
+		"test": "test-module"
 	},
 	"repository": {
 		"type": "git",
