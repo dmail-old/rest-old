@@ -1,21 +1,18 @@
 {
-	"name": "ressource",
+	"name": "@dmail/rest",
 	"version": "0.0.1",
 	"description": "Open connection to any kind of ressource based on their URL",
 	"dependencies": {
-		"system-postinstall": "git+https://github.com/dmail/system-postinstall",
-		"@dmail/http": "git+https://github.com/dmail/http",
-		"@dmail/url": "git+https://github.com/dmail/url"
+		"@dmail/http": "git+https://github.com/dmail/http"
 	},
 	"devDependencies": {
-		"test-module": "git+https://github.com/dmail/test-module"
+		"system-test": "git+https://github.com/dmail/system-test"
 	},
 	"scripts": {
-		"postinstall": "system-postinstall",
-		"test": "test-module"
+		"test": "system-test"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/dmail/ressource"
+		"url": "https://github.com/dmail/rest"
 	}
 }
